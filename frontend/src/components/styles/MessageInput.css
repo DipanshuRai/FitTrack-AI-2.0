@@ -1,0 +1,36 @@
+.message-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin: 10px;
+}
+
+.message {
+  flex: 1;
+  padding: 0.5rem;
+  height: 3rem;
+  font-size: 1.1rem;
+  border: 1px solid #e5e7eb;
+  background-color: rgba(165, 210, 243, 0.664);
+  border-radius: 0.5rem;
+  outline: none;
+}
+
+.send-btn {
+  background-color: rgb(1, 133, 109);
+  border: none;
+  border-radius: 50%;
+  width: 2.9rem;
+  height: 2.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.send-btn:hover{
+  transform: scale(1.05);
+}

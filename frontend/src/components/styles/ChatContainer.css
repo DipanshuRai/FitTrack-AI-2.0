@@ -1,0 +1,108 @@
+/* ChatContainer.css */
+
+.placeholder {
+  display: flex;
+  flex-direction: column; /* Center icon and text vertically */
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  color: var(--subtext, #64748b);
+  text-align: center;
+  background-color: #f8f9fa; /* Give placeholder a light background */
+}
+
+.placeholder svg {
+  color: #bdc5d1; /* Softer icon color */
+  margin-bottom: 1rem;
+}
+
+.placeholder p {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.chat-area { /* Replaces .chat-container to avoid name collision */
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: var(--surface);
+  overflow: hidden;
+}
+
+.chat-header {
+  padding: 0.87rem 1.5rem; /* More horizontal padding */
+  border-bottom: 1px solid var(--border, #d1d5db);
+  background-color: #f8f9fa; /* Header background */
+  z-index: 10;
+}
+
+.header-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem; /* Reduced gap between message wrappers */
+}
+
+/* Wrapper for bubble and timestamp */
+.message-wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 65%; /* Max width of a message */
+  margin-bottom: 1rem; /* Space between distinct messages */
+}
+
+/* Align messages */
+.message-wrapper.sent { align-self: flex-end; align-items: flex-end; }
+.message-wrapper.received { align-self: flex-start; align-items: flex-start; }
+
+.message-bubble {
+  padding: 0.75rem 1rem;
+  border-radius: 18px; /* More rounded bubbles */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  word-wrap: break-word;
+}
+
+.message-text {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Style for received (other user's) messages */
+.message-wrapper.received .message-bubble {
+  background-color: #e9ecef; /* Light grey */
+  color: var(--text);
+  border-bottom-left-radius: 4px; /* "Tail" effect */
+}
+
+/* Style for sent (your) messages */
+.message-wrapper.sent .message-bubble {
+  background-color: var(--primary); /* Use primary color */
+  color: white;
+  border-bottom-right-radius: 4px; /* "Tail" effect */
+}
+
+.message-time {
+  font-size: 0.75rem;
+  color: var(--subtext);
+  margin-top: 0.3rem;
+  padding: 0 0.5rem;
+}
+
+/* @media (max-width: 768px) {
+  .message-wrapper {
+    max-width: 85%;
+  }
+  .chat-messages { padding: 1rem 0.75rem; }
+  .chat-header { padding: 0.75rem 1rem; }
+  .header-name { font-size: 1rem; }
+} */
